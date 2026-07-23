@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Library Book Issue System</title>
+</head>
+
+<body bgcolor="lightgreen">
+
+<center>
+<h2>LIBRARY BOOK ISSUE SYSTEM</h2>
+
+<form onsubmit="return issueBook()">
+
+<table border="1" cellpadding="10" bgcolor="white">
+
+<tr>
+<td>Student Name</td>
+<td><input type="text" id="name" required></td>
+</tr>
+
+<tr>
+<td>Register Number</td>
+<td><input type="text" id="regno" required></td>
+</tr>
+
+<tr>
+<td>Department</td>
+<td>
+<select id="dept">
+<option>B.Sc Computer Science</option>
+<option>BCA</option>
+<option>B.Com</option>
+<option>MCA</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Issue Book">
+<input type="reset" value="Reset">
+</td>
+</tr>
+
+</table>
+
+</form>
+
+</center>
+
+<script>
+
+function issueBook()
+{
+var name=document.getElementById("name").value;
+
+var book=prompt("Enter Book Name:");
+
+if(book=="" || book==null)
+{
+alert("Please enter the Book Name.");
+return false;
+}
+
+var ok=confirm("Do you want to issue \""+book+"\" ?");
+
+if(ok)
+{
+alert("Book Issued Successfully!\nStudent: "+name+"\nBook: "+book);
+return true;
+}
+else
+{
+alert("Book Issue Cancelled.");
+return false;
+}
+}
+
+</script>
+
+</body>
+</html>
